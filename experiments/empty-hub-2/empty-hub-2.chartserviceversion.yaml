@@ -1,0 +1,26 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: empty-hub-2
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: empty-hub-2
+  displayName: empty-hub-2-chaos
+  experiments: null
+  faults:
+  - description: ""
+    name: lambda-function-layer-detach-mgk
+  keywords:
+  - empty-hub-2
+  provider:
+    name: ""
+  scenarios: null

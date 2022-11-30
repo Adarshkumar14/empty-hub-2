@@ -1,0 +1,26 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: boutique-cart-connectivity-loss
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: boutique-cart-connectivity-loss-chaos
+  experiments: null
+  faults:
+  - description: ""
+    name: pod-network-loss-8so
+  keywords:
+  - boutique
+  provider:
+    name: ""
+  scenarios: null

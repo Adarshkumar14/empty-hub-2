@@ -1,0 +1,27 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-delete
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: test-delete
+  displayName: test-delete-chaos
+  experiments: null
+  faults:
+  - description: ""
+    name: pod-network-loss-8so
+  keywords:
+  - unknown
+  - bootique
+  provider:
+    name: ""
+  scenarios: null

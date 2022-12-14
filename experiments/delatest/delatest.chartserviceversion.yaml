@@ -1,0 +1,25 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: delatest
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: test
+  displayName: delatest-chaos
+  experiments: null
+  faults:
+  - description: ""
+    name: pod-delete-2kl
+  keywords: []
+  provider:
+    name: ""
+  scenarios: null

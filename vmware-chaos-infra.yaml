@@ -79,7 +79,7 @@ data:
   START_TIME: "1673942934"
   SKIP_SSL_VERIFY: "false"
   CUSTOM_TLS_CERT: ""
-  IS_INFRA_CONFIRMED: "false"
+  IS_INFRA_CONFIRMED: "true"
   COMPONENTS: |
     DEPLOYMENTS: ["app=chaos-exporter", "name=chaos-operator", "app=workflow-controller"]
 ---
@@ -90,7 +90,7 @@ metadata:
   namespace: hce
 stringData:
   INFRA_ID: cacd59f2-4960-4a1f-9292-24f910df9056
-  ACCESS_KEY: t1JifcbaixysCXIAQKhkV0lPituFgtTe
+  ACCESS_KEY: WBIcWFmrfMCwvt8Cni2OP6vTc3sWOgPe
 ---
 apiVersion: apps/v1
 kind: Deployment

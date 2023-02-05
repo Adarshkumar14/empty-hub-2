@@ -1,0 +1,33 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-1-scenario
+  version: ""
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: it also deletes the pod
+  chaosExpCRDLink: ""
+  chaosType: ""
+  displayName: test-1-scenario chaos
+  experiments:
+  - description: This chaos scenario consists of pod-delete-ppq experiment
+    name: pod-delete-ppq
+  keywords:
+  - 'project: test'
+  links: null
+  maintainers: null
+  maturity: ""
+  minKubeVersion: ""
+  platforms: null
+  provider:
+    name: ""
+  scenarios: null

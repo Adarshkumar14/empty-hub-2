@@ -1,0 +1,33 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-1
+  version: ""
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: deletes the pod
+  chaosExpCRDLink: ""
+  chaosType: ""
+  displayName: test-1 chaos
+  experiments:
+  - description: This chaos scenario consists of kube-proxy-pod-delete-chaos experiment
+    name: kube-proxy-pod-delete-chaos
+  keywords:
+  - 'project: admin'
+  links: null
+  maintainers: null
+  maturity: ""
+  minKubeVersion: ""
+  platforms: null
+  provider:
+    name: ""
+  scenarios: null

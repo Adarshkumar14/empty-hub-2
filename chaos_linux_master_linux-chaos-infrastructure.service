@@ -1,0 +1,23 @@
+[Unit]
+Description=linux-chaos-infrastructure service
+ConditionPathExists=/usr/local/bin/linux-chaos-infrastructure
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=1024
+
+Restart=always
+RestartSec=5
+
+ExecStartPre=/usr/bin/bash -c "if [ -f /etc/linux-chaos-infrastructure/chaos-network-interface ];then tc qdisc delete dev $(cat /etc/linux-chaos-infrastructure/chaos-network-interface) root;rm /etc/linux-chaos-infrastructure/chaos-network-interface;fi; if [ -f /etc/linux-chaos-infrastructure/chaos-services ];then while read line;do if [[ $line != '' ]];then systemctl start $line;fi;done < /etc/linux-chaos-infrastructure/chaos-services;rm /etc/linux-chaos-infrastructure/chaos-services;fi; if [ -f /etc/resolv-backup.conf ];then mv /etc/resolv-backup.conf /etc/resolv.conf;fi; if [ $(timedatectl show --property=NTP) == 'NTP=no' ];then timedatectl set-ntp true;fi"
+ExecStart=/usr/local/bin/linux-chaos-infrastructure
+ExecStopPost=/usr/bin/bash -c "if [ -n \"$(pgrep chaos-process)\" ];then pkill -9 -f chaos-process;fi; if [ $(timedatectl show --property=NTP) == 'NTP=no' ];then timedatectl set-ntp true; hwclock --hctosys;fi"
+
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=multi-user.target

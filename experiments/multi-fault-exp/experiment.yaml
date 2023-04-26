@@ -1,0 +1,71 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: multi-fault-exp
+spec:
+  cleanupPolicy: retain
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-xo6
+    - name: linux-network-latency-8fb
+  - - name: linux-cpu-stress-g1t
+  - - name: linux-network-latency-ksn
+    - name: linux-network-loss-pum
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30
+          load: 1
+          workers: 1
+    name: linux-cpu-stress-xo6
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-latency
+        networkChaos/inputs:
+          duration: 30
+          networkLatency: 2000
+    name: linux-network-latency-8fb
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30
+          load: 1
+          workers: 1
+    name: linux-cpu-stress-g1t
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-latency
+        networkChaos/inputs:
+          duration: 30
+          networkLatency: 2000
+    name: linux-network-latency-ksn
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-loss
+        networkChaos/inputs:
+          duration: 30
+          packetLossPercentage: 100
+    name: linux-network-loss-pum
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null

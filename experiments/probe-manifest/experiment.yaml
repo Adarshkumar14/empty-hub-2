@@ -1,0 +1,98 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: probe-manifest
+spec:
+  cleanupPolicy: retain
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: task-1
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-disk-io-stress
+        probes:
+        - httpProbe/inputs:
+            method:
+              get:
+                criteria: ==
+                responseCode: "200"
+            url: https://litmuschaos.io
+          mode: Continuous
+          name: service-health-check2
+          runProperties:
+            attempt: 1
+            interval: 100
+            probePollingInterval: 100
+            probeTimeout: 10000
+          type: HTTPProbe
+        - cmdProbe/inputs:
+            command: echo shubham
+            comparator:
+              criteria: contains
+              type: string
+              value: shubham
+            source:
+              env:
+              - name: Name
+                value: cmd probe
+              image: shubh214/source-probe:ci
+          mode: SOT
+          name: cmdprobe-source
+          runProperties:
+            attempt: 1
+            interval: 100
+            probePollingInterval: 100
+            probeTimeout: 10000
+          type: CmdProbe
+        - cmdProbe/inputs:
+            command: echo shubham
+            comparator:
+              criteria: contains
+              type: string
+              value: shubham1
+            source:
+              env:
+              - name: Name
+                value: cmd probe
+              image: shubh214/source-probe:ci
+          mode: OnChaos
+          name: cmdprobe-source2
+          runProperties:
+            attempt: 1
+            interval: 100
+            probePollingInterval: 100
+            probeTimeout: 10000
+          type: CmdProbe
+        - cmdProbe/inputs:
+            command: echo shubham
+            comparator:
+              criteria: contains
+              type: string
+              value: shubham1
+            source:
+              env:
+              - name: ""
+                value: cmd probe
+              image: shubh214/source-probe:ci
+          mode: SOT
+          name: cmdprobe-source3
+          runProperties:
+            attempt: 1
+            interval: 100
+            probePollingInterval: 100
+            probeTimeout: 10000
+          type: CmdProbe
+        stressChaos/inputs:
+          duration: 30
+          fileSystemUtilisationPercentage: 10
+          workers: 1
+    name: task-1
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null

@@ -1,0 +1,29 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: probe-manifest
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: probe-manifest
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: task-1
+  - description: ""
+    displayName: ""
+    name: task-1
+  keywords: []
+  provider:
+    name: ""
+  scenarios: null

@@ -1,0 +1,26 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: test-linux-1
+spec:
+  cleanupPolicy: retain
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-i6w
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30
+          load: 1
+          workers: 1
+    name: linux-cpu-stress-i6w
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null

@@ -1,0 +1,29 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-linux-1
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: target linux-exp
+  displayName: test-linux-1
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-i6w
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-i6w
+  keywords: []
+  provider:
+    name: ""
+  scenarios: null

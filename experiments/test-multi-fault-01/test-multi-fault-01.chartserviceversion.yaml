@@ -1,0 +1,30 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-multi-fault-01
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: test-multi-fault-01
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: task-1
+  - description: ""
+    displayName: ""
+    name: task-1
+  keywords:
+  - linux
+  provider:
+    name: ""
+  scenarios: null

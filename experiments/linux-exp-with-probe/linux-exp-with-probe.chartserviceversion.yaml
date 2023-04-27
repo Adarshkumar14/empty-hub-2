@@ -1,0 +1,30 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: linux-exp-with-probe
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: test
+  displayName: linux-exp-with-probe
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: task-1
+  - description: ""
+    displayName: ""
+    name: task-1
+  keywords:
+  - linux
+  provider:
+    name: ""
+  scenarios: null
